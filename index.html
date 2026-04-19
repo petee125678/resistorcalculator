@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:#fff8ef; color:404040;">
+<head> <title> calculate your resistors!</title></head>
+<h1 style="font-size:60px; font-family: 'Brush Script MT'">calculate your resistors!</h1>
+<h4 id=result style="font-size:30px; margin:0px,-10px">results will show here!</h4>
+<h5>enter each lines color in order and watch the magic happen!</h5>
+<form id="questions">
+
+    <input id="num1" type="text">
+    <input id="num2" type="text">
+    <input id="num3" type="text">
+    <button type="submit" onclick="calculateit()">find out!</button>
+
+</form>
+
+<img src="" id="pic1" width="auto" height="200">
+<img src="" id="pic2" width="auto" height="200">
+<img src="" id="pic3" width="auto" height="200">
+<img src="" width="auto" height="540" id="resistor" style="margin-left:-300px;margin-top:-375px;">
+
+<script>
+    const myForm = document.getElementById("questions");
+ myForm.addEventListener("submit", function(event){event.preventDefault()})
+
+    function calculateit() {
+ let conv1 = document.getElementById("num1").value;
+ let conv2 = document.getElementById("num2").value;
+ let conv3 = document.getElementById("num3").value;
+ let num1st;
+ let num2nd;
+ let num3rd;
+if (conv1 === "black" || conv1 === "Black") {num1st= 0, document.getElementById("pic1").src = "black.png",document.getElementById("resistor").src = "resistoe.png"} 
+else if (conv1 === "brown" || conv1 === "Brown") {num1st=1, document.getElementById("pic1").src = "brown.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "red" || conv1 === "Red") {num1st=2 , document.getElementById("pic1").src = "red.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "orange" || conv1 === "Orange") {num1st=3 , document.getElementById("pic1").src = "orange.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "yellow" || conv1 === "Yellow") {num1st=4,  document.getElementById("pic1").src = "yellow.png" ,document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "green" || conv1 === "Green") {num1st =5 , document.getElementById("pic1").src = "green.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "blue" || conv1 === "Blue") {num1st =6,  document.getElementById("pic1").src = "blue.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "Purple" || conv1 === "purple" || conv1 === "violet" || conv1 === "Violet") {num1st=7 , document.getElementById("pic1").src = "purple.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "gray" || conv1 === "Gray" || conv1 === "grey" || conv1 === "Grey") {num1st=8 , document.getElementById("pic1").src = "grey.png",document.getElementById("resistor").src = "resistoe.png"}
+else if (conv1 === "white" || conv1 === "White") {num1st=9 , document.getElementById("pic1").src = "white.png",document.getElementById("resistor").src = "resistoe.png"};
+
+
+if (conv2 === "black" || conv2 === "Black") {num2nd= 0 , document.getElementById("pic2").src = "black.png"}
+else if (conv2 === "brown" || conv2 === "Brown") {num2nd=1, document.getElementById("pic2").src = "brown.png"}
+else if (conv2 === "red" || conv2 === "Red") {num2nd=2, document.getElementById("pic2").src = "red.png"}
+else if (conv2 === "orange" || conv2 === "Orange") {num2nd=3, document.getElementById("pic2").src = "orange.png"}
+else if (conv2 === "yellow" || conv2 === "Yellow") {num2nd=4, document.getElementById("pic2").src = "yellow.png"}
+else if (conv2 === "green" || conv2 === "Green") {num2nd =5, document.getElementById("pic2").src = "green.png"}
+else if (conv2 === "blue" || conv2 === "Blue") {num2nd =6, document.getElementById("pic2").src = "blue.png"}
+else if (conv2 === "Purple" || conv2 === "purple" || conv2 === "violet" || conv2 === "Violet") {num2nd=7, document.getElementById("pic2").src = "purple.png"}
+else if (conv2 === "gray" || conv2 === "Gray" || conv2 === "grey" || conv2 === "Grey") {num2nd=8, document.getElementById("pic2").src = "grey.png"}
+else if (conv2 === "white" || conv2 === "White") {num2nd=9, document.getElementById("pic2").src = "white.png"};
+
+
+if (conv3 === "black" || conv3 === "Black") {num3rd= 0, document.getElementById("pic3").src = "black.png"}
+else if (conv3 === "brown" || conv3 === "Brown") {num3rd=1, document.getElementById("pic3").src = "brown.png"}
+else if (conv3 === "red" || conv3 === "Red") {num3rd=2, document.getElementById("pic3").src = "red.png"}
+else if (conv3 === "orange" || conv3 === "Orange") {num3rd=3, document.getElementById("pic3").src = "orange.png"}
+else if (conv3 === "yellow" || conv3 === "Yellow") {num3rd=4, document.getElementById("pic3").src = "yellow.png"}
+else if (conv3 === "green" || conv3 === "Green") {num3rd =5, document.getElementById("pic3").src = "green.png"}
+else if (conv3 === "blue" || conv3 === "Blue") {num3rd =6, document.getElementById("pic3").src = "blue.png"}
+else if (conv3 === "Purple" || conv3 === "purple" || conv3 === "violet" || conv3 === "Violet") {num3rd=7, document.getElementById("pic3").src = "purple.png"}
+else if (conv3 === "gray" || conv3 === "Gray" || conv3 === "grey" || conv3 === "Grey") {num3rd=8, document.getElementById("pic3").src = "grey.png"}
+else if (conv3 === "white" || conv3 === "White") {num3rd=9, document.getElementById("pic3").src = "white.png"};
+
+
+ let firsthalf =  "" + num1st + num2nd
+ let answer = +firsthalf * +(10 ** num3rd)
+ document.getElementById("result").textContent = "its "+answer+"Ω" ;
+ if (isNaN(answer)) {document.getElementById("result").textContent = "Error! try again with no spaces and proper colors"}
+    }
+  
+</script>
+<h1><a href="help.html">HELP!!</a></h1>
+</body>
+</html>
